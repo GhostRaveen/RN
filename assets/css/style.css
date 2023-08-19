@@ -1,0 +1,547 @@
+@charset "UTF-8";
+
+
+/*---------------- VARIÁVEIS ----------------*/
+
+
+
+/*---------------- ESTILOS GERAIS ----------------*/
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+body {
+   font-family: "Lato", sans-serif;
+   color: white;
+   background-color: rgb(59, 59, 59);
+}
+
+li {
+   list-style-type: none;
+}
+
+
+/*---------------- NAVBAR / TELAS GRANDES ----------------*/
+
+
+.container {
+   position: relative;
+   overflow: hidden;
+   display: flex;
+   justify-content: space-evenly;
+   align-items: center;
+   z-index: 1000;
+}
+
+.logo {
+   width: 100px;
+   height: 100%;
+   margin: 15px;
+   transition: .5s;
+}
+.logo:hover {
+   transition: .5s;
+   opacity: 0.8;
+}
+
+.ul-links {
+   display: flex;
+}
+
+.li-links {
+   text-decoration: none;
+   margin:0 5px;
+   padding: 10px;
+   font-size: 1.3em;
+   border-radius: 5px;
+   color: #f1f1f1;
+   font-family: 'Arial', sans-serif;
+}
+.li-links:hover {
+   color: #a1a1a1;
+}
+
+.container, 
+.ul-links, 
+.li-links,
+.logo {
+   background-color: rgb(23 23 23);
+}
+
+
+/*---------------- MENU LATERAL / SMARTPHONES E TABLETS ----------------*/
+.dropmenu {display: none;}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: rgb(23 23 23);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 116px;
+}
+
+.sidenav a {
+   padding: 8px 8px 8px 32px;
+   text-decoration: none;
+   font-size: 25px;
+   display: block;
+}
+.sidenav a {
+   color: #f1f1f1;
+   transition: 0.3s;
+}
+.sidenav a:hover {
+  color: #a1a1a1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 16px;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+
+/*---------------- NAVBAR PARA DISPOSITIVOS MÓVEIS! ----------------*/
+.menumobile {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   background-color: rgb(23 23 23); 
+   z-index: -1;
+}
+
+.menumobile .logo {
+   width: 100px;
+}
+
+.barra-menu{
+   position: absolute;
+   font-size:30px;
+   cursor:pointer;
+   right: 30px;
+}
+
+.barra-menu {
+   color: #a1a1a1;
+   transition: 0.3s;
+}
+.barra-menu:hover {
+  color: #f1f1f1;
+}
+
+/*-------- NAVBAR RESPONSIVA --------*/
+@media screen and (max-width: 1000px) {
+   .container {display: none;}
+   .dropmenu {display: block;}
+}
+
+
+/*---------------- BANNER ----------------*/
+.banner__flex {
+   background-color: #111;
+}
+.banner--img {
+   width: 100%;
+   height: 40vh;
+   filter: saturate(0%);
+}
+.banner--text1,
+.banner--text2 {
+   text-align: center;
+   margin: 5px;
+   color: #635c5c;
+}
+
+/*-------- BANNER RESPONSIVO --------*/
+@media screen and (max-width: 1000px) {
+   .h1-banner {
+      width: 85vw;
+      padding: 50px 40px;
+      font-size: 24px;
+   }
+}
+
+/*---------------- SOBRE ----------------*/
+.linha-center {
+   display: flex;
+   justify-content: center;
+}
+
+.linha {
+   margin: 10px 0;
+   background-color: #111;
+   width: 900px;
+   height: 3px;
+}
+
+
+.sobre {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   background-color: rgb(23 23 23);
+   padding: 50px;
+}
+
+.h2-sobre {
+   font-size: 28px;
+   font-weight: bold;
+   color: rgb(231, 231, 231);
+   margin-bottom: 20px;
+}
+
+.p-sobre {
+   text-align: justify;
+   max-width: 900px;
+   font-size: 18px;
+   color: rgb(202, 202, 202);
+   line-height: 1.5;
+}
+
+
+
+@media screen and (max-width: 1000px) {
+   .linha {
+      width: 85vw;
+  }
+}
+
+
+/*---------------- CARDÁPIO ----------------*/
+.galeria {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding: 50px 0;
+   background-color: #111;
+}
+
+@media screen and (max-width: 768px) {
+  .sobre {
+    padding: 30px;
+  }
+  
+  .p-sobre {
+    text-align: left;
+  }
+}
+
+
+/*-------- Passar as imagens --------*/
+.background-galeria {
+   padding: 50px 0 10px 0;
+}
+
+/* Slideshow container */
+.slideshow-container {
+   max-width: 700px;
+   width: 700px;
+   position: relative;
+   margin: auto;
+   background-color: rgba(0 0 0 / 0.5);
+   background-size: cover;
+}
+
+@media screen and (max-width: 1000px) {
+   .slideshow-container {
+      width: 100%;
+   }
+}
+
+.img-Slideshow {
+   max-height: 80vh;
+   object-fit: cover;
+   image-rendering: crisp-edges;
+}
+
+/* Botões direita e esqueda */
+.prev, .next {
+  text-align: center;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: 45px;
+  line-height: 45px;
+  margin-top: -22px;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.3s ease;
+  border-radius: 50%;
+  user-select: none;
+  color: #fff;
+  background-color: rgba(0 0 0 / 0.3);
+}
+
+/* Posição do botão da direita */
+.next {
+  right: 0;
+  border-radius: 50%;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0 0 0 / 0.5);
+}
+
+/* Circulos para passar de img */
+.dot {
+  cursor: pointer;
+  height: 10px;
+  width: 10px;
+  margin: 0 2px;
+  background-color: rgb(83, 83, 83);
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #747474;
+}
+
+/* Animação de desaparecer */
+.fade {
+  animation-name: fade;
+  animation-duration: 1s;
+}
+
+@keyframes fade {
+  from {opacity: .7} 
+  to {opacity: 1}
+}
+
+/* Diminuir as setas para telas menores */
+@media only screen and (max-width: 300px) {
+  .prev, .next {
+  	font-size: 11px;
+    width: 35px;
+    line-height: 35px;
+  }
+}
+
+
+/*---------------- SLIDESHOW PARA BAIXO ----------------*/
+.mySlides {
+  display: none;
+  position: relative;
+}
+
+.img-Slideshow {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  background-color: rgba(0 0 0 / 0.5);
+  overflow: hidden;
+  width: 100%;
+  height:0;
+  transition: .8s .1s ease;
+}
+
+.mySlides:hover .overlay {
+  bottom: 0;
+  height: 100%;
+}
+
+.button--overlay,
+.button--galeria{
+  font-size: 20px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+}
+
+.button--overlay {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  color: #FFF;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  background-color: #ff362f;
+}
+
+.button--overlay:hover {
+  background-color: red;
+}
+
+
+/*-------- Botão do cardápio --------*/
+.div--galeria {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.button--galeria {
+  padding: 20px 20px;
+  border-radius: 999px;
+  color: rgb(170, 170, 170);
+  background-color: transparent;
+}
+
+.button--galeria:hover {
+  text-decoration: underline;
+}
+
+
+/*---------------- DELIVERY ----------------*/
+.orcamento {
+   padding: 50px;
+   text-align: center;
+   border-top: 2px solid rgb(39, 39, 39);
+   border-bottom: 2px solid rgb(39, 39, 39);
+   background-color: rgb(23 23 23);
+}
+.h1-orcamento {
+   padding: 50px 0;
+   font-size: 3em;
+}
+
+.button-orcamento {
+   color: rgb(173, 173, 173);
+   margin: 0 0 50px 0;
+   font-size: 20px;
+   border-radius: 999px;
+   border: none;
+   padding: 20px 50px;
+   background-color: #1b1b1b;
+   transition: .2s;
+}
+.button-orcamento:hover {
+   background-color: #141414;
+   transition: .2s;
+}
+
+
+/*---------------- LOCALIZAÇÃO ----------------*/
+.localizacao {
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   padding: 50px;
+   background-color: #111;
+}
+
+.h2-localizacao {
+   padding: 50px 0;
+}
+
+/* Formulálio */
+form {
+   width: 500px;
+   text-align: left;
+   border-radius: 5px;
+   padding: 20px;
+}
+
+label {
+   display: block;
+   font-weight: bold;
+   margin-bottom: 5px;
+}
+
+input[type="text"],
+textarea {
+   width: 100%;
+   padding: 10px;
+   border: 1px solid rgb(32, 32, 32);
+   border-radius: 4px;
+   margin-bottom: 10px;
+}
+
+textarea {
+   resize: vertical;
+   height: 100px;
+}
+
+input[type="submit"] {
+   background-color: #4CAF50;
+   color: white;
+   padding: 10px 20px;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+   font-size: 16px;
+}
+
+input[type="submit"]:hover {
+   background-color: #45a049;
+}
+/* Fim do formulálio */
+
+.div-txt-localizacao {
+   text-align: center;
+   margin-top: 50px;
+}
+
+.p-localizacao {
+   padding: 20px 0;
+}
+
+/* Redes Sociais */
+.redesociais {
+   display: flex;
+   gap: 30px;
+   align-items: center;
+   margin-top: 130px;
+}
+
+.div-redesociais {
+   font-size: 24px;
+   transition: .1s ease;
+}
+.div-redesociais:hover {
+   color: #a1a1a1;
+}
+
+
+/*---------------- RODAPÉ ----------------*/
+.rodape {
+   text-align: center;
+   padding: 10px;
+   background-color: rgb(12, 12, 12);
+   color: rgb(97, 97, 97);
+}
+
+
+@media screen and (max-width: 600px) {
+   form {
+      width: 80vw;
+   }
+   .h1-orcamento {
+      font-size: 2.7em;
+   }
+   .button-orcamento {
+      font-size: 16px;
+      padding: 18px 45px;
+   }
+   .p-localizacao {
+      font-size: 15px;
+   }
+}
